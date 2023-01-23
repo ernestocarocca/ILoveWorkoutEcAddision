@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */; };
-		8DD3F65E297E94B1008D5F77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65D297E94B1008D5F77 /* ContentView.swift */; };
+		8DD3F65E297E94B1008D5F77 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65D297E94B1008D5F77 /* LandingView.swift */; };
 		8DD3F660297E94B7008D5F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F65F297E94B7008D5F77 /* Assets.xcassets */; };
 		8DD3F663297E94B7008D5F77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F662297E94B7008D5F77 /* Preview Assets.xcassets */; };
 		8DD3F66D297E94B8008D5F77 /* ILoveWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F66C297E94B8008D5F77 /* ILoveWorkoutTests.swift */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		8DD3F658297E94B1008D5F77 /* ILoveWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILoveWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutApp.swift; sourceTree = "<group>"; };
-		8DD3F65D297E94B1008D5F77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8DD3F65D297E94B1008D5F77 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
 		8DD3F65F297E94B7008D5F77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DD3F662297E94B7008D5F77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8DD3F668297E94B8008D5F77 /* ILoveWorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ILoveWorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 			isa = PBXGroup;
 			children = (
 				8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */,
-				8DD3F65D297E94B1008D5F77 /* ContentView.swift */,
+				8DD3F65D297E94B1008D5F77 /* LandingView.swift */,
 				8DD3F65F297E94B7008D5F77 /* Assets.xcassets */,
 				8DD3F661297E94B7008D5F77 /* Preview Content */,
 			);
@@ -257,7 +257,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD3F65E297E94B1008D5F77 /* ContentView.swift in Sources */,
+				8DD3F65E297E94B1008D5F77 /* LandingView.swift in Sources */,
 				8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
