@@ -8,12 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */; };
-		8DD3F65E297E94B1008D5F77 /* LandingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65D297E94B1008D5F77 /* LandingView.swift */; };
+		8DD3F65E297E94B1008D5F77 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */; };
 		8DD3F660297E94B7008D5F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F65F297E94B7008D5F77 /* Assets.xcassets */; };
 		8DD3F663297E94B7008D5F77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F662297E94B7008D5F77 /* Preview Assets.xcassets */; };
 		8DD3F66D297E94B8008D5F77 /* ILoveWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F66C297E94B8008D5F77 /* ILoveWorkoutTests.swift */; };
 		8DD3F677297E94B8008D5F77 /* ILoveWorkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F676297E94B8008D5F77 /* ILoveWorkoutUITests.swift */; };
 		8DD3F679297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F678297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift */; };
+		8DD3F688297ECE2B008D5F77 /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F687297ECE2B008D5F77 /* CreateWorkoutView.swift */; };
+		8DD3F68A297EFF1D008D5F77 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F689297EFF1D008D5F77 /* DropDownView.swift */; };
+		8DD3F68C297F042A008D5F77 /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F68B297F042A008D5F77 /* MyButtonStyle.swift */; };
+		8DD3F68E297F069C008D5F77 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F68D297F069C008D5F77 /* Color+Extension.swift */; };
+		8DD3F690297F1B39008D5F77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F68F297F1B39008D5F77 /* ContentView.swift */; };
+		8DD3F694297F1DC1008D5F77 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F693297F1DC1008D5F77 /* File.swift */; };
+		8DD3F696297F1DDD008D5F77 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F695297F1DDD008D5F77 /* ProfileView.swift */; };
+		8DD3F698297F1DEC008D5F77 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F697297F1DEC008D5F77 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +44,7 @@
 /* Begin PBXFileReference section */
 		8DD3F658297E94B1008D5F77 /* ILoveWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILoveWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutApp.swift; sourceTree = "<group>"; };
-		8DD3F65D297E94B1008D5F77 /* LandingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingView.swift; sourceTree = "<group>"; };
+		8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
 		8DD3F65F297E94B7008D5F77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8DD3F662297E94B7008D5F77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		8DD3F668297E94B8008D5F77 /* ILoveWorkoutTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ILoveWorkoutTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +52,14 @@
 		8DD3F672297E94B8008D5F77 /* ILoveWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ILoveWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD3F676297E94B8008D5F77 /* ILoveWorkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutUITests.swift; sourceTree = "<group>"; };
 		8DD3F678297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8DD3F687297ECE2B008D5F77 /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
+		8DD3F689297EFF1D008D5F77 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		8DD3F68B297F042A008D5F77 /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
+		8DD3F68D297F069C008D5F77 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		8DD3F68F297F1B39008D5F77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		8DD3F693297F1DC1008D5F77 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
+		8DD3F695297F1DDD008D5F77 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		8DD3F697297F1DEC008D5F77 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +110,12 @@
 		8DD3F65A297E94B1008D5F77 /* ILoveWorkout */ = {
 			isa = PBXGroup;
 			children = (
+				8DD3F692297F1B9E008D5F77 /* Views */,
 				8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */,
-				8DD3F65D297E94B1008D5F77 /* LandingView.swift */,
 				8DD3F65F297E94B7008D5F77 /* Assets.xcassets */,
 				8DD3F661297E94B7008D5F77 /* Preview Content */,
+				8DD3F68B297F042A008D5F77 /* MyButtonStyle.swift */,
+				8DD3F68D297F069C008D5F77 /* Color+Extension.swift */,
 			);
 			path = ILoveWorkout;
 			sourceTree = "<group>";
@@ -125,6 +143,20 @@
 				8DD3F678297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift */,
 			);
 			path = ILoveWorkoutUITests;
+			sourceTree = "<group>";
+		};
+		8DD3F692297F1B9E008D5F77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8DD3F687297ECE2B008D5F77 /* CreateWorkoutView.swift */,
+				8DD3F689297EFF1D008D5F77 /* DropDownView.swift */,
+				8DD3F68F297F1B39008D5F77 /* ContentView.swift */,
+				8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */,
+				8DD3F693297F1DC1008D5F77 /* File.swift */,
+				8DD3F695297F1DDD008D5F77 /* ProfileView.swift */,
+				8DD3F697297F1DEC008D5F77 /* AccountView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +289,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD3F65E297E94B1008D5F77 /* LandingView.swift in Sources */,
+				8DD3F688297ECE2B008D5F77 /* CreateWorkoutView.swift in Sources */,
+				8DD3F696297F1DDD008D5F77 /* ProfileView.swift in Sources */,
+				8DD3F68E297F069C008D5F77 /* Color+Extension.swift in Sources */,
+				8DD3F690297F1B39008D5F77 /* ContentView.swift in Sources */,
+				8DD3F698297F1DEC008D5F77 /* AccountView.swift in Sources */,
+				8DD3F68A297EFF1D008D5F77 /* DropDownView.swift in Sources */,
+				8DD3F65E297E94B1008D5F77 /* FirstScreenView.swift in Sources */,
+				8DD3F694297F1DC1008D5F77 /* File.swift in Sources */,
+				8DD3F68C297F042A008D5F77 /* MyButtonStyle.swift in Sources */,
 				8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
