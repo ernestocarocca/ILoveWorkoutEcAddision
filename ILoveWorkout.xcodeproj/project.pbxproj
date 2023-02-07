@@ -14,14 +14,19 @@
 		8DD3F66D297E94B8008D5F77 /* ILoveWorkoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F66C297E94B8008D5F77 /* ILoveWorkoutTests.swift */; };
 		8DD3F677297E94B8008D5F77 /* ILoveWorkoutUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F676297E94B8008D5F77 /* ILoveWorkoutUITests.swift */; };
 		8DD3F679297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F678297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift */; };
-		8DD3F688297ECE2B008D5F77 /* CreateWorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F687297ECE2B008D5F77 /* CreateWorkoutView.swift */; };
-		8DD3F68A297EFF1D008D5F77 /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F689297EFF1D008D5F77 /* DropDownView.swift */; };
 		8DD3F68C297F042A008D5F77 /* MyButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F68B297F042A008D5F77 /* MyButtonStyle.swift */; };
 		8DD3F68E297F069C008D5F77 /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F68D297F069C008D5F77 /* Color+Extension.swift */; };
 		8DD3F690297F1B39008D5F77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F68F297F1B39008D5F77 /* ContentView.swift */; };
-		8DD3F694297F1DC1008D5F77 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F693297F1DC1008D5F77 /* File.swift */; };
 		8DD3F696297F1DDD008D5F77 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F695297F1DDD008D5F77 /* ProfileView.swift */; };
 		8DD3F698297F1DEC008D5F77 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F697297F1DEC008D5F77 /* AccountView.swift */; };
+		8DD3F69B298CC9B2008D5F77 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD3F69A298CC9B2008D5F77 /* FirebaseAuth */; };
+		8DD3F6A1298CC9B2008D5F77 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD3F6A0298CC9B2008D5F77 /* FirebaseFirestore */; };
+		8DD3F6A5298CC9B2008D5F77 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD3F6A4298CC9B2008D5F77 /* FirebaseStorage */; };
+		8DD3F6A7298CCCB4008D5F77 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F6A6298CCCB2008D5F77 /* GoogleService-Info.plist */; };
+		8DD3F6AE298D7DF4008D5F77 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD3F6AD298D7DF4008D5F77 /* FirebaseDatabase */; };
+		8DD3F6B0298D7F84008D5F77 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8DD3F6AF298D7F84008D5F77 /* FirebaseFirestoreSwift */; };
+		8DD3F6B2299160ED008D5F77 /* WorkoutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F6B1299160ED008D5F77 /* WorkoutView.swift */; };
+		8DD3F6B62991630A008D5F77 /* WorkoutItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F6B52991630A008D5F77 /* WorkoutItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,14 +57,14 @@
 		8DD3F672297E94B8008D5F77 /* ILoveWorkoutUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ILoveWorkoutUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD3F676297E94B8008D5F77 /* ILoveWorkoutUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutUITests.swift; sourceTree = "<group>"; };
 		8DD3F678297E94B8008D5F77 /* ILoveWorkoutUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		8DD3F687297ECE2B008D5F77 /* CreateWorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutView.swift; sourceTree = "<group>"; };
-		8DD3F689297EFF1D008D5F77 /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
 		8DD3F68B297F042A008D5F77 /* MyButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyButtonStyle.swift; sourceTree = "<group>"; };
 		8DD3F68D297F069C008D5F77 /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		8DD3F68F297F1B39008D5F77 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		8DD3F693297F1DC1008D5F77 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		8DD3F695297F1DDD008D5F77 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		8DD3F697297F1DEC008D5F77 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
+		8DD3F6A6298CCCB2008D5F77 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8DD3F6B1299160ED008D5F77 /* WorkoutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutView.swift; sourceTree = "<group>"; };
+		8DD3F6B52991630A008D5F77 /* WorkoutItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +72,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8DD3F6B0298D7F84008D5F77 /* FirebaseFirestoreSwift in Frameworks */,
+				8DD3F6A1298CC9B2008D5F77 /* FirebaseFirestore in Frameworks */,
+				8DD3F69B298CC9B2008D5F77 /* FirebaseAuth in Frameworks */,
+				8DD3F6AE298D7DF4008D5F77 /* FirebaseDatabase in Frameworks */,
+				8DD3F6A5298CC9B2008D5F77 /* FirebaseStorage in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +104,7 @@
 				8DD3F66B297E94B8008D5F77 /* ILoveWorkoutTests */,
 				8DD3F675297E94B8008D5F77 /* ILoveWorkoutUITests */,
 				8DD3F659297E94B1008D5F77 /* Products */,
+				8DD3F6AC298D7DF3008D5F77 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -113,9 +124,11 @@
 				8DD3F692297F1B9E008D5F77 /* Views */,
 				8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */,
 				8DD3F65F297E94B7008D5F77 /* Assets.xcassets */,
+				8DD3F6A6298CCCB2008D5F77 /* GoogleService-Info.plist */,
 				8DD3F661297E94B7008D5F77 /* Preview Content */,
 				8DD3F68B297F042A008D5F77 /* MyButtonStyle.swift */,
 				8DD3F68D297F069C008D5F77 /* Color+Extension.swift */,
+				8DD3F6B52991630A008D5F77 /* WorkoutItem.swift */,
 			);
 			path = ILoveWorkout;
 			sourceTree = "<group>";
@@ -148,15 +161,20 @@
 		8DD3F692297F1B9E008D5F77 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				8DD3F687297ECE2B008D5F77 /* CreateWorkoutView.swift */,
-				8DD3F689297EFF1D008D5F77 /* DropDownView.swift */,
 				8DD3F68F297F1B39008D5F77 /* ContentView.swift */,
 				8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */,
-				8DD3F693297F1DC1008D5F77 /* File.swift */,
 				8DD3F695297F1DDD008D5F77 /* ProfileView.swift */,
 				8DD3F697297F1DEC008D5F77 /* AccountView.swift */,
+				8DD3F6B1299160ED008D5F77 /* WorkoutView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		8DD3F6AC298D7DF3008D5F77 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +193,13 @@
 			dependencies = (
 			);
 			name = ILoveWorkout;
+			packageProductDependencies = (
+				8DD3F69A298CC9B2008D5F77 /* FirebaseAuth */,
+				8DD3F6A0298CC9B2008D5F77 /* FirebaseFirestore */,
+				8DD3F6A4298CC9B2008D5F77 /* FirebaseStorage */,
+				8DD3F6AD298D7DF4008D5F77 /* FirebaseDatabase */,
+				8DD3F6AF298D7F84008D5F77 /* FirebaseFirestoreSwift */,
+			);
 			productName = ILoveWorkout;
 			productReference = 8DD3F658297E94B1008D5F77 /* ILoveWorkout.app */;
 			productType = "com.apple.product-type.application";
@@ -247,6 +272,9 @@
 				Base,
 			);
 			mainGroup = 8DD3F64F297E94B0008D5F77;
+			packageReferences = (
+				8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 8DD3F659297E94B1008D5F77 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -265,6 +293,7 @@
 			files = (
 				8DD3F663297E94B7008D5F77 /* Preview Assets.xcassets in Resources */,
 				8DD3F660297E94B7008D5F77 /* Assets.xcassets in Resources */,
+				8DD3F6A7298CCCB4008D5F77 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,14 +318,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8DD3F688297ECE2B008D5F77 /* CreateWorkoutView.swift in Sources */,
 				8DD3F696297F1DDD008D5F77 /* ProfileView.swift in Sources */,
 				8DD3F68E297F069C008D5F77 /* Color+Extension.swift in Sources */,
+				8DD3F6B2299160ED008D5F77 /* WorkoutView.swift in Sources */,
 				8DD3F690297F1B39008D5F77 /* ContentView.swift in Sources */,
 				8DD3F698297F1DEC008D5F77 /* AccountView.swift in Sources */,
-				8DD3F68A297EFF1D008D5F77 /* DropDownView.swift in Sources */,
 				8DD3F65E297E94B1008D5F77 /* FirstScreenView.swift in Sources */,
-				8DD3F694297F1DC1008D5F77 /* File.swift in Sources */,
+				8DD3F6B62991630A008D5F77 /* WorkoutItem.swift in Sources */,
 				8DD3F68C297F042A008D5F77 /* MyButtonStyle.swift in Sources */,
 				8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */,
 			);
@@ -617,6 +645,45 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8DD3F69A298CC9B2008D5F77 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		8DD3F6A0298CC9B2008D5F77 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		8DD3F6A4298CC9B2008D5F77 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		8DD3F6AD298D7DF4008D5F77 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		8DD3F6AF298D7F84008D5F77 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8DD3F699298CC9B2008D5F77 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8DD3F650297E94B0008D5F77 /* Project object */;
 }
