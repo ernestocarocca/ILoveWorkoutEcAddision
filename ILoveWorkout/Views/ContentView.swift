@@ -6,11 +6,12 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     var body: some View {
         TabView {
-            CreateWorkoutView()
+            WorkoutView()
                 .tabItem() {
                     Image(systemName: "doc.text.below.ecg.fill")
                     Text("Workout")
@@ -18,15 +19,15 @@ struct ContentView: View {
                 AccountView()
                 .tabItem() {
                     Image(systemName: "person.crop.circle.fill")
-                    Text("Workout")
+                    Text("Account")
                 }
                 ProfileView()
                 .tabItem() {
                     Image(systemName: "gearshape.fill")
-                    Text("Workout")
+                    Text("Profile")
                 }
         }
-        .navigationBarBackButtonHidden(true)
+        .navigationBarBackButtonHidden(false)
     }
 }
 

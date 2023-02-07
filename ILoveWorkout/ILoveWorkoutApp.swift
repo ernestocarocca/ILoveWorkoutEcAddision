@@ -6,9 +6,17 @@
 //
 
 import SwiftUI
+import Firebase
+
 
 @main
 struct ILoveWorkoutApp: App {
+    
+    init() {
+        FirebaseApp.configure()
+    }
+    
+    
     var body: some Scene {
         WindowGroup {
             FirstScreenView()
