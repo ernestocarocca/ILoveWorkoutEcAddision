@@ -7,27 +7,17 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
+
 
 struct WorkoutView: View {
     let db = Firestore.firestore()
-    
+    let currentUser = Auth.auth().currentUser
    
-    @State var newWorkout : String = ""
     @State var workoutitems = [WorkoutItem]()
+    @State var logoutOptions = false
     
-    
-    
-//    var searchBar : some View {
-//        HStack {
-//            TextField("Enter in a new workout", text:
-//                        self.$newWorkout)
-//            Button(action: self.addNewWorkout, label: {
-//                    Text("Add New")
-//            })
-//        }
-//    }
 
-    
     var body: some View {
         NavigationView {
             VStack() {
@@ -37,50 +27,44 @@ struct WorkoutView: View {
                             Text(workoutitems.name)
                             Spacer()
                             Button(action: {
-                                if let id = workoutitems.id {
-                                    db.collection("workoutitems").document(id).updateData(["done": !workoutitems.done])
+                                if let user = currentUser {
+                                    if let documentid = workoutitems.id {
+                                        db.collection("users").document(user.uid).collection("exercises").document(documentid).updateData(["done": true])
+                                    }
                                 }
                             }) {
                                 Image(systemName: workoutitems.done ? "checkmark.square" : "square")
                             }
-                            
-                            
-                            
-                            
-                            
-                            
                         }
                     }.onDelete() { indexSet in
                         for index in indexSet {
                             let workoutitem = workoutitems[index]
-                            if let id = workoutitem.id {
-                                db.collection("workoutitems").document(id).delete()
+                            if let id = workoutitem.id,
+                               let user = Auth.auth().currentUser
+                            {
+                                db.collection("users").document(user.uid).collection("exercises").document(id).delete()
                             }
                         }
-                        
                     }
                 }
-            }.navigationBarTitle("Exercise")
-             .onAppear() {
-//                saveToFirestore(workoutName: "Situps 25 st")
-//                 saveToFirestore(workoutName: "Pushups 25 st - 25kg viktplatta")
-//                 saveToFirestore(workoutName: "Squats 25 st - 100kg")
-                listenToFirestore()
-            }
-            .padding()
+            }.navigationBarTitle("Exercise List")
+             .navigationBarItems(trailing: NavigationLink(destination: ButtonView())
+                                    {
+                    Image(systemName: "plus.circle")
+                })
+                
+                .onAppear() {
+                    listenToFirestore()
+                }
+                .padding()
         }
 }
-  
     
-    func saveToFirestore(workoutName: String) {
-        
-        
-        db.collection("workoutitems").addDocument(data: ["name" : workoutName,
-                                                         "exercise" : "",
-                                                         "done": false])
-    }
+
+    //Läser ner firebase övningar, hämtar data från firebase.
     func listenToFirestore() {
-            db.collection("workoutitems").addSnapshotListener { snapshot, err in
+        if let currentUser {
+            db.collection("users").document(currentUser.uid).collection("exercises").addSnapshotListener { snapshot, err in
                 guard let snapshot = snapshot else {return}
                 
                 if let err = err {
@@ -97,6 +81,7 @@ struct WorkoutView: View {
                             workoutitems.append(workoutitem)
                         case .failure(let error) :
                             print("Error decoding workoutitem: \(error)")
+                           }
                         }
                     }
                 }
@@ -104,7 +89,6 @@ struct WorkoutView: View {
         }
     }
         
-
 
 struct WorkoutView_Previews: PreviewProvider {
     static var previews: some View {

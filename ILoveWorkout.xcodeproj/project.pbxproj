@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8DA495EB2994F3CB003A0CD0 /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA495EA2994F3CB003A0CD0 /* ButtonView.swift */; };
 		8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */; };
 		8DD3F65E297E94B1008D5F77 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */; };
 		8DD3F660297E94B7008D5F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F65F297E94B7008D5F77 /* Assets.xcassets */; };
@@ -46,6 +47,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		8DA495EA2994F3CB003A0CD0 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		8DD3F658297E94B1008D5F77 /* ILoveWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILoveWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutApp.swift; sourceTree = "<group>"; };
 		8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				8DD3F695297F1DDD008D5F77 /* ProfileView.swift */,
 				8DD3F697297F1DEC008D5F77 /* AccountView.swift */,
 				8DD3F6B1299160ED008D5F77 /* WorkoutView.swift */,
+				8DA495EA2994F3CB003A0CD0 /* ButtonView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -323,6 +326,7 @@
 				8DD3F65E297E94B1008D5F77 /* FirstScreenView.swift in Sources */,
 				8DD3F6B62991630A008D5F77 /* WorkoutItem.swift in Sources */,
 				8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */,
+				8DA495EB2994F3CB003A0CD0 /* ButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

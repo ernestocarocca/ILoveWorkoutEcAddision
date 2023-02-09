@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import Firebase
+import FirebaseAuth
 
 
 struct WorkoutItem : Codable, Identifiable {

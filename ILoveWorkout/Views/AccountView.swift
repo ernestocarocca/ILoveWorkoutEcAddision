@@ -43,6 +43,7 @@ struct AccountView: View {
                     .offset(x: -100, y: -100)
                 
                 TextField("Email", text: $email)
+                    
                     .foregroundColor(.white)
                     .textFieldStyle(.plain)
                     .placeholder(when: email.isEmpty) {
@@ -81,17 +82,43 @@ struct AccountView: View {
                         .foregroundColor(.white)
                 }
                 .padding(.top)
-                .offset(y: 25)
+                .offset(y: 15)
                 
                 Button {
                     login()
                 } label: {
-                    Text("Already have an account? Login")
+                    Text("Sign In")
                         .bold()
+                        .frame(width: 200, height: 40)
+                        .background(
+                            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(.linearGradient(colors: [.red, .black], startPoint:
+                                .top, endPoint: .bottomTrailing))
+                            )
                         .foregroundColor(.white)
                 }
                 .padding(.top)
-                .offset(y: 50)
+                .offset(y: 15)
+  
+                Text("Already have an account? Try Logging in!")
+                    .bold()
+                    .foregroundColor(.white)
+                    .padding(.top)
+                    .offset(y: 25)
+                
+                
+                
+                
+                
+//                Button {
+//                    login()
+//                } label: {
+//                    Text("Already have an account? Login")
+//                        .bold()
+//                        .foregroundColor(.white)
+//                }
+//                .padding(.top)
+//                .offset(y: 25)
 
 
                 
@@ -114,7 +141,7 @@ struct AccountView: View {
     func login() {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                print("error!.localizedDescription")
+                print("error wrong password or account")
             }
         }
     }
@@ -123,7 +150,7 @@ struct AccountView: View {
     func register() {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
-                print("error!.localizedDescription")
+                print("error wrong account or to bad of a password")
             }
         }
     }
