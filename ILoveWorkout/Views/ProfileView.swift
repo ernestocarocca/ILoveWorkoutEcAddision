@@ -11,7 +11,8 @@ import Firebase
 struct ProfileView: View {
     var body: some View {
         ZStack {
-            Color.blue
+            Color.white
+            Text("Hej Välkommen till din profil. Här ska vi försöka spara din information ")
         }
     }
 }

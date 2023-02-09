@@ -17,7 +17,6 @@ struct WorkoutItem : Codable, Identifiable {
     var name : String
     var exercise : String = ""
     var done : Bool = false
-    
-    
-    
+
 }
+

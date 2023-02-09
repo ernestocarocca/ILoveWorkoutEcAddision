@@ -11,11 +11,26 @@ import Firebase
 struct WorkoutView: View {
     let db = Firestore.firestore()
     
+   
+    @State var newWorkout : String = ""
     @State var workoutitems = [WorkoutItem]()
     
-    var body: some View {
     
-            VStack {
+    
+//    var searchBar : some View {
+//        HStack {
+//            TextField("Enter in a new workout", text:
+//                        self.$newWorkout)
+//            Button(action: self.addNewWorkout, label: {
+//                    Text("Add New")
+//            })
+//        }
+//    }
+
+    
+    var body: some View {
+        NavigationView {
+            VStack() {
                 List {
                     ForEach(workoutitems) {workoutitems in
                         HStack {
@@ -29,6 +44,11 @@ struct WorkoutView: View {
                                 Image(systemName: workoutitems.done ? "checkmark.square" : "square")
                             }
                             
+                            
+                            
+                            
+                            
+                            
                         }
                     }.onDelete() { indexSet in
                         for index in indexSet {
@@ -40,16 +60,20 @@ struct WorkoutView: View {
                         
                     }
                 }
-            }.onAppear() {
-                
+            }.navigationBarTitle("Exercise")
+             .onAppear() {
+//                saveToFirestore(workoutName: "Situps 25 st")
+//                 saveToFirestore(workoutName: "Pushups 25 st - 25kg viktplatta")
+//                 saveToFirestore(workoutName: "Squats 25 st - 100kg")
                 listenToFirestore()
             }
             .padding()
-    }
-    
+        }
+}
+  
     
     func saveToFirestore(workoutName: String) {
-        //let workoutitem = WorkoutItem(name: workoutName)
+        
         
         db.collection("workoutitems").addDocument(data: ["name" : workoutName,
                                                          "exercise" : "",

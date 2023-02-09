@@ -18,7 +18,7 @@ struct FirstScreenView: View {
                 VStack {
                     Spacer().frame(height:
                                     proxy.size.height * 0.40)
-                    Text("I Love Workout")
+                    Text("Workout Diary")
                         .font(.system(size: 59, weight: .medium))
                         .foregroundColor(.white)
                     Spacer()
@@ -32,7 +32,7 @@ struct FirstScreenView: View {
                                 Image(systemName: "plus.circle")
                                     .font(.system(size: 24))
                                     .foregroundColor(.white)
-                                Text("Create Workout")
+                                Text("Continue")
                                     .font(.system(size: 24))
                                     .foregroundColor(.white)
                             }.padding()

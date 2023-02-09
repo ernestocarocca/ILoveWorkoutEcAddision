@@ -7,11 +7,13 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 
 struct AccountView: View {
     @State private var email = ""
     @State private var password = ""
     @State private var userIsLoggedIn = false
+    
     
     var body: some View {
         if userIsLoggedIn {
@@ -112,7 +114,7 @@ struct AccountView: View {
     func login() {
         Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if error != nil {
-                print(error!.localizedDescription)
+                print("error!.localizedDescription")
             }
         }
     }
@@ -121,7 +123,7 @@ struct AccountView: View {
     func register() {
         Auth.auth().createUser(withEmail: email, password: password) { result, error in
             if error != nil {
-                print(error!.localizedDescription)
+                print("error!.localizedDescription")
             }
         }
     }
