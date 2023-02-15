@@ -10,25 +10,33 @@ import Firebase
 import FirebaseAuth
 
 struct ContentView: View {
+    @AppStorage("uid") var userID: String = ""
+    
+    
     var body: some View {
-        TabView {
-            WorkoutView()
-                .tabItem() {
-                    Image(systemName: "doc.text.below.ecg.fill")
-                    Text("Workout")
-                }
-                AccountView()
-                .tabItem() {
-                    Image(systemName: "person.crop.circle.fill")
-                    Text("Account")
-                }
+        
+        if userID == "" {
+            AuthView()
+        } else {
+            TabView {
+                WorkoutView()
+                    .tabItem() {
+                        Image(systemName: "doc.text.below.ecg.fill")
+                        Text("Workout")
+                    }
+                AuthView()
+                    .tabItem() {
+                        Image(systemName: "person.crop.circle.fill")
+                        Text("Account")
+                    }
                 ProfileView()
-                .tabItem() {
-                    Image(systemName: "gearshape.fill")
-                    Text("Profile")
-                }
+                    .tabItem() {
+                        Image(systemName: "gearshape.fill")
+                        Text("Profile")
+                    }.navigationBarBackButtonHidden(true)
+            }
+            
         }
-        .navigationBarBackButtonHidden(false)
     }
 }
 

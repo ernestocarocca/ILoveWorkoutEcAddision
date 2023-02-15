@@ -12,7 +12,8 @@ import FirebaseAuth
 struct ProfileView: View {
     
     @State var logoutOptions = false
-
+    @State private var userIsLoggedIn = false
+    
     var body: some View {
         VStack {
             
@@ -23,7 +24,6 @@ struct ProfileView: View {
     }
 
     private var TopNavigationBarView: some View {
-        
         HStack(spacing: 16) {
             
             Image(systemName: "person.fill")
@@ -35,7 +35,7 @@ struct ProfileView: View {
                 Text("Welcome")
                     .font(.system(size: 24, weight: .bold))
                 
-                HStack {
+                    HStack {
                     Circle()
                         .foregroundColor(.green)
                         .frame(width: 14, height: 14)
@@ -62,11 +62,19 @@ struct ProfileView: View {
             .init(title: Text("Alert"), message: Text("Do you want to logout?"), buttons: [
                 .destructive(Text("Sign out"), action: {
                     print("Succes! You signed out")
-                    try? Auth.auth().signOut()
+                    let firebaseAuth = Auth.auth()
+                    do {
+                        try firebaseAuth.signOut()
+                    } catch let signOutError as NSError {
+                        print("Error signing out: #€", signOutError)
+                    }
+                    
+                    //try? Auth.auth().signOut()
                 }),
                 .cancel()
              ])
         }
+
     }
     
 }
