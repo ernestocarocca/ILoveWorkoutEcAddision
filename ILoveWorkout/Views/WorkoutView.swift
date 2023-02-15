@@ -11,6 +11,7 @@ import FirebaseAuth
 
 
 struct WorkoutView: View {
+    //@AppStorage("uid") var userID: String = ""
     let db = Firestore.firestore()
     let currentUser = Auth.auth().currentUser
    

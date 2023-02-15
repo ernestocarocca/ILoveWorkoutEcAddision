@@ -33,8 +33,8 @@ struct ContentView: View {
                     .tabItem() {
                         Image(systemName: "gearshape.fill")
                         Text("Profile")
-                    }.navigationBarBackButtonHidden(true)
-            }
+                    }
+            }.navigationBarBackButtonHidden(true)
             
         }
     }

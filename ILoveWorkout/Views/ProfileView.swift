@@ -10,17 +10,19 @@ import Firebase
 import FirebaseAuth
 
 struct ProfileView: View {
+    @AppStorage("uid") var userID: String = ""
     
     @State var logoutOptions = false
     @State private var userIsLoggedIn = false
     
     var body: some View {
-        VStack {
-            
-            TopNavigationBarView
-            Spacer()
-            Color.blue
-        }
+            VStack {
+                
+                TopNavigationBarView
+                Spacer()
+                Color.blue
+            }
+        
     }
 
     private var TopNavigationBarView: some View {
@@ -65,6 +67,9 @@ struct ProfileView: View {
                     let firebaseAuth = Auth.auth()
                     do {
                         try firebaseAuth.signOut()
+                        withAnimation {
+                            userID = ""
+                        }
                     } catch let signOutError as NSError {
                         print("Error signing out: #€", signOutError)
                     }
