@@ -31,6 +31,7 @@ struct WorkoutView: View {
                                 if let user = currentUser {
                                     if let documentid = workoutitems.id {
                                         db.collection("users").document(user.uid).collection("exercises").document(documentid).updateData(["done": !workoutitems.done])
+                                        
                                     }
                                 }
                             }) {

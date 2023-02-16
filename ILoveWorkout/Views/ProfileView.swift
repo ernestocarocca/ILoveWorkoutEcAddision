@@ -16,8 +16,9 @@ struct ProfileView: View {
     @State private var userIsLoggedIn = false
     @State private var currentIndex = 0
     
+    
     private var numberOfImages = 6
-    private let timer = Timer.publish(every: 3, on: .main, in: .common
+    private let timer = Timer.publish(every: 2, on: .main, in: .common
     ).autoconnect()
     
     var body: some View {

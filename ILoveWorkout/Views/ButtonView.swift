@@ -40,10 +40,12 @@ struct ButtonView: View {
     
     func saveExercise(workoutName: String) {
         if let currentUser {
-                db.collection("users").document(currentUser.uid).collection("exercises").addDocument(data:
-                                                                                                        ["name" : workoutName,
-                                                                                                         "exercise" : "",
-                                                                                                         "done": false])
+        db.collection("users").document(currentUser.uid).collection("exercises").addDocument(data:
+                                                                                                   ["name" : workoutName,
+                                                                                                    "exercise" : "",
+                                                                                                    "done": false,
+                                                                                                    "date": Date(),
+                                                                                                    "workoutCount": Int()])
             }
 
         }

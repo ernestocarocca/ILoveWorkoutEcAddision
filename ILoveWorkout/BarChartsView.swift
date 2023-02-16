@@ -13,65 +13,51 @@ import Foundation
 
 
 struct BarChartsView: View {
+   
     
-    //Mockdata
-    let workoutMonths: [WorkoutMonth] = [
-        .init(date: Date.from(year: 2023, month: 1, day: 1), workoutCount: 20),
-        .init(date: Date.from(year: 2023, month: 2, day: 1), workoutCount: 75),
-        .init(date: Date.from(year: 2023, month: 3, day: 1), workoutCount: 69),
-        .init(date: Date.from(year: 2023, month: 4, day: 1), workoutCount: 55),
-        .init(date: Date.from(year: 2023, month: 5, day: 1), workoutCount: 110),
-        .init(date: Date.from(year: 2023, month: 6, day: 1), workoutCount: 105),
-        .init(date: Date.from(year: 2023, month: 7, day: 1), workoutCount: 200),
-        .init(date: Date.from(year: 2023, month: 8, day: 1), workoutCount: 155),
-        .init(date: Date.from(year: 2023, month: 9, day: 1), workoutCount: 170),
-        .init(date: Date.from(year: 2023, month: 10, day: 1), workoutCount: 38),
-        .init(date: Date.from(year: 2023, month: 11, day: 1), workoutCount: 98),
-        .init(date: Date.from(year: 2023, month: 12, day: 1), workoutCount: 300)]
+    let db = Firestore.firestore()
+    let currentUser = Auth.auth().currentUser
     
+    @State var workoutCounter = [WorkoutItem]()
+
     var body: some View {
+        
         VStack(alignment: .leading, spacing: 4) {
             Text("Exercises Counter")
-
-            Text("Total: \(workoutMonths.reduce(0, { $0 + $1.workoutCount }))")
+            
+            Text("Total: \(workoutCounter.reduce(0, { $0 + $1.workoutCount }))")
                 .fontWeight(.semibold)
                 .font(.footnote)
                 .foregroundColor(.secondary)
                 .padding(.bottom, 12)
-
+            
             Chart {
                 RuleMark(y: .value("Goal", 200))
                     .foregroundStyle(Color.black)
                     .lineStyle(StrokeStyle(lineWidth: 1, dash: [5]))
-
-                ForEach(workoutMonths) { workoutMonth in
+                
+                ForEach(workoutCounter) { workoutcounter in
                     BarMark(
-                        x: .value("Month", workoutMonth.date, unit: .month),
-                        y: .value("WorkoutCount", workoutMonth.workoutCount)
+                        x: .value("Month", workoutcounter.date, unit: .month),
+                        y: .value("WorkoutCount", workoutcounter.workoutCount)
                     )
-                    .foregroundStyle(Color.pink.gradient)
+                    .foregroundStyle(Color.red.gradient)
                     .cornerRadius(10)
                 }
             }
             .frame(height: 180)
             .chartYScale()
-            .chartYAxis {
-                AxisMarks(values: workoutCount.map {$0.workoutCount}) { count in
-                    AxisValueLabel(format: .count.month(.narrow))
-                }
-            }
+            //Lägga till Y-Axis markers???
             .chartXAxis {
-                AxisMarks(values: workoutMonths.map {$0.date}) { date in
+                AxisMarks(values: workoutCounter.map {$0.date}) { date in
                     AxisValueLabel(format:
-                                    .dateTime.month(.narrow),
-                                     centered: true)
+                            .dateTime.month(.narrow),
+                                   centered: true)
                 }
             }
-            .chartXAxis {
-                AxisMarks { mark in
-                    AxisValueLabel()
-                    AxisGridLine()
-                }
+            .chartYAxis {
+                AxisMarks(position: .leading)
+                
             }
             HStack {
                 Image(systemName: "line.diagonal")
@@ -83,30 +69,53 @@ struct BarChartsView: View {
             }
             .font(.caption2)
             .padding(.leading, 4)
-                
-
+            
+            
+        }
+        .onAppear() {
+            listenToFirestore()
         }
         .padding()
     }
-}
-
-struct BarChartsView_Previews: PreviewProvider {
-    static var previews: some View {
-        BarChartsView()
+    
+    func listenToFirestore() {
+        if let currentUser {
+            db.collection("users").document(currentUser.uid).collection("exercises").addSnapshotListener { snapshot, err in
+                guard let snapshot = snapshot else {return}
+                
+                if let err = err {
+                    print("Error getting document \(err)")
+                } else {
+                    workoutCounter.removeAll()
+                    for document in snapshot.documents {
+                        
+                        let result = Result {
+                            try document.data(as: WorkoutItem.self)
+                        }
+                        switch result  {
+                        case .success(let workoutcount)  :
+                            workoutCounter.append(workoutcount)
+                        case .failure(let error) :
+                            print("Error decoding workoutitem: \(error)")
+                        }
+                    }
+                }
+            }
+        }
     }
-}
+    
 
-//flytta kanske till workoutitem?
-struct WorkoutMonth: Identifiable {
-    let id = UUID()
-    let date: Date
-    let workoutCount: Int
 }
-
+//struct BarChartsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        BarChartsView(workoutitems: <#[WorkoutItem]#>)
+//    }
+//}
 
 extension Date {
-    static func from(year: Int, month: Int, day: Int) -> Date {
-        let components = DateComponents(year: year, month: month, day: day)
+    static func from(month: Int) -> Date {
+        let components = DateComponents(month: month)
         return Calendar.current.date(from: components)!
     }
 }
+

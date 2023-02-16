@@ -24,7 +24,7 @@ struct loginView: View {
             
             VStack {
                 HStack {
-                    Text("Welcome")
+                    Text("Hello, & Welcome")
                         .font(.largeTitle)
                         .bold()
                     
@@ -104,7 +104,8 @@ struct loginView: View {
                             print(authResult.user.uid)
                             withAnimation {
                                 userID = authResult.user.uid
-                
+                                    
+                                
                             }
                         }
                     }
@@ -121,6 +122,7 @@ struct loginView: View {
                         .background(
                             RoundedRectangle(cornerRadius: 10)
                                 .fill(Color.black)
+                                     
                         )
                         .padding(.horizontal)
                 }
