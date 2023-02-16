@@ -93,7 +93,6 @@ struct loginView: View {
                 Spacer()
                 Spacer()
                 
-                
                 Button {
                     Auth.auth().signIn(withEmail: email, password: password) { authResult, error in
                         if let error = error {
@@ -105,13 +104,10 @@ struct loginView: View {
                             print(authResult.user.uid)
                             withAnimation {
                                 userID = authResult.user.uid
-                                
+                
                             }
                         }
-                        
-                        
                     }
-                    
                     
                 } label: {
                     Text("Sign in")
@@ -131,7 +127,7 @@ struct loginView: View {
 
                 
             }
-        }
+        }.navigationBarBackButtonHidden(true)
     }
 }
 

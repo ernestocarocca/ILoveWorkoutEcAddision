@@ -25,6 +25,7 @@ struct ButtonView: View {
     var body: some View {
         VStack{
             TextEditor(text: $content)
+                .background(.gray)
                 .onTapGesture {
                     //Kanske inte behövs?, hade cleartext behövs inte än.
                 }

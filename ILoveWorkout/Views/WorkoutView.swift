@@ -52,6 +52,8 @@ struct WorkoutView: View {
              .navigationBarItems(trailing: NavigationLink(destination: ButtonView())
                                     {
                     Image(systemName: "plus.circle")
+                     .transition(.move(edge: .bottom
+                                      ))
                 })
                 
                 .onAppear() {

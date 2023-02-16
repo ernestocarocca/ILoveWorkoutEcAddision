@@ -11,17 +11,80 @@ import FirebaseAuth
 
 struct ProfileView: View {
     @AppStorage("uid") var userID: String = ""
-    
     @State var logoutOptions = false
     @State private var userIsLoggedIn = false
+    @State private var currentIndex = 0
     
-    var body: some View {
-            VStack {
-                
-                TopNavigationBarView
-                Spacer()
-                Color.blue
+    private var numberOfImages = 6
+    private let timer = Timer.publish(every: 3, on: .main, in: .common
+    ).autoconnect()
+    
+    func previous() {
+        withAnimation {
+            currentIndex = currentIndex > 0 ? currentIndex
+            - 1 : numberOfImages  - 1
+        }
+    }
+    
+    func next() {
+        withAnimation {
+            currentIndex = currentIndex <
+                numberOfImages ? currentIndex + 1 : 0
             }
+        }
+    
+    var controls: some View {
+        HStack {
+            Button {
+                previous()
+            } label: {
+                Image(systemName: "chevron.left")
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+            }
+            Button {
+                next()
+            } label: {
+                Image(systemName: "chevron.right")
+                    .fontWeight(.bold)
+                    .foregroundColor(.black)
+                
+            }
+        }
+    }
+
+    var body: some View {
+        VStack {
+            
+            TopNavigationBarView
+            Spacer()
+            
+            
+            GeometryReader { proxy in
+                TabView(selection: $currentIndex) {
+                    ForEach(0..<numberOfImages) { num in
+                        Image("\(num)")
+                            .resizable()
+                            .scaledToFill()
+                            .overlay(Color.black.opacity(0.4))
+                            .tag(num)
+                    }
+                }.tabViewStyle(PageTabViewStyle())
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                    .padding()
+                    .frame(width: proxy.size.width, height:
+                            proxy.size.height / 1.3)
+                    .onReceive(timer, perform: { _ in
+                        next()
+                        
+                        })
+                
+            }
+            controls
+            Spacer()
+            Spacer()
+            
+        }
         
     }
 
