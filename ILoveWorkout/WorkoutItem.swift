@@ -7,6 +7,8 @@
 
 import Foundation
 import FirebaseFirestoreSwift
+import Firebase
+import FirebaseAuth
 
 
 struct WorkoutItem : Codable, Identifiable {
@@ -17,7 +19,6 @@ struct WorkoutItem : Codable, Identifiable {
     var name : String
     var exercise : String = ""
     var done : Bool = false
-    
-    
-    
+
 }
+
