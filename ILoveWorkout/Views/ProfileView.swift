@@ -8,6 +8,7 @@
 import SwiftUI
 import Firebase
 import FirebaseAuth
+import Charts
 
 struct ProfileView: View {
     @AppStorage("uid") var userID: String = ""
@@ -19,13 +20,47 @@ struct ProfileView: View {
     private let timer = Timer.publish(every: 3, on: .main, in: .common
     ).autoconnect()
     
+    var body: some View {
+        VStack {
+            TopNavigationBarView
+            Spacer()
+            BarChartsView()
+            
+            GeometryReader { proxy in
+                TabView(selection: $currentIndex) {
+                    ForEach(0..<numberOfImages) { num in
+                        Image("\(num)")
+                            .resizable()
+                            .scaledToFill()
+                            .overlay(Color.black.opacity(0.4))
+                            .tag(num)
+                    }
+                }.tabViewStyle(PageTabViewStyle())
+                    .clipShape(RoundedRectangle(cornerRadius: 5))
+                    .padding()
+                    .frame(width: proxy.size.width, height:
+                            proxy.size.height / 1)
+                    .onReceive(timer, perform: { _ in
+                        next()
+                        
+                        })
+                
+            }
+            controls
+            Spacer()
+            Spacer()
+            
+        }
+        
+    }
+    
     func previous() {
         withAnimation {
             currentIndex = currentIndex > 0 ? currentIndex
             - 1 : numberOfImages  - 1
         }
     }
-    
+
     func next() {
         withAnimation {
             currentIndex = currentIndex <
@@ -52,42 +87,7 @@ struct ProfileView: View {
             }
         }
     }
-
-    var body: some View {
-        VStack {
-            
-            TopNavigationBarView
-            Spacer()
-            
-            
-            GeometryReader { proxy in
-                TabView(selection: $currentIndex) {
-                    ForEach(0..<numberOfImages) { num in
-                        Image("\(num)")
-                            .resizable()
-                            .scaledToFill()
-                            .overlay(Color.black.opacity(0.4))
-                            .tag(num)
-                    }
-                }.tabViewStyle(PageTabViewStyle())
-                    .clipShape(RoundedRectangle(cornerRadius: 5))
-                    .padding()
-                    .frame(width: proxy.size.width, height:
-                            proxy.size.height / 1.3)
-                    .onReceive(timer, perform: { _ in
-                        next()
-                        
-                        })
-                
-            }
-            controls
-            Spacer()
-            Spacer()
-            
-        }
-        
-    }
-
+    
     private var TopNavigationBarView: some View {
         HStack(spacing: 16) {
             
