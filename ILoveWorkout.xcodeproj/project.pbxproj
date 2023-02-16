@@ -11,6 +11,7 @@
 		8DA495F1299D8378003A0CD0 /* loginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA495F0299D8378003A0CD0 /* loginView.swift */; };
 		8DA495F3299D8B4A003A0CD0 /* signupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA495F2299D8B4A003A0CD0 /* signupView.swift */; };
 		8DA495F5299D8D29003A0CD0 /* AuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA495F4299D8D29003A0CD0 /* AuthView.swift */; };
+		8DA495F7299E7863003A0CD0 /* BarChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DA495F6299E7863003A0CD0 /* BarChartsView.swift */; };
 		8DD3F65C297E94B1008D5F77 /* ILoveWorkoutApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */; };
 		8DD3F65E297E94B1008D5F77 /* FirstScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */; };
 		8DD3F660297E94B7008D5F77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DD3F65F297E94B7008D5F77 /* Assets.xcassets */; };
@@ -53,6 +54,7 @@
 		8DA495F0299D8378003A0CD0 /* loginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loginView.swift; sourceTree = "<group>"; };
 		8DA495F2299D8B4A003A0CD0 /* signupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signupView.swift; sourceTree = "<group>"; };
 		8DA495F4299D8D29003A0CD0 /* AuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthView.swift; sourceTree = "<group>"; };
+		8DA495F6299E7863003A0CD0 /* BarChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarChartsView.swift; sourceTree = "<group>"; };
 		8DD3F658297E94B1008D5F77 /* ILoveWorkout.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ILoveWorkout.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DD3F65B297E94B1008D5F77 /* ILoveWorkoutApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ILoveWorkoutApp.swift; sourceTree = "<group>"; };
 		8DD3F65D297E94B1008D5F77 /* FirstScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstScreenView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				8DD3F661297E94B7008D5F77 /* Preview Content */,
 				8DD3F68D297F069C008D5F77 /* Color+Extension.swift */,
 				8DD3F6B52991630A008D5F77 /* WorkoutItem.swift */,
+				8DA495F6299E7863003A0CD0 /* BarChartsView.swift */,
 			);
 			path = ILoveWorkout;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				8DD3F696297F1DDD008D5F77 /* ProfileView.swift in Sources */,
 				8DD3F68E297F069C008D5F77 /* Color+Extension.swift in Sources */,
 				8DA495F5299D8D29003A0CD0 /* AuthView.swift in Sources */,
+				8DA495F7299E7863003A0CD0 /* BarChartsView.swift in Sources */,
 				8DA495F1299D8378003A0CD0 /* loginView.swift in Sources */,
 				8DD3F6B2299160ED008D5F77 /* WorkoutView.swift in Sources */,
 				8DD3F690297F1B39008D5F77 /* ContentView.swift in Sources */,

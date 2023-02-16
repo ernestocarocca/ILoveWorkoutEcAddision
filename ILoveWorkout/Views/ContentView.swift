@@ -11,11 +11,7 @@ import FirebaseAuth
 
 struct ContentView: View {
     @AppStorage("uid") var userID: String = ""
-    init () {
-//        UITabBar.appearance().isTranslucent = false
-        UITabBar.appearance().barTintColor = UIColor.red
-    }
-    
+
     var body: some View {
         
         if userID == "" {
