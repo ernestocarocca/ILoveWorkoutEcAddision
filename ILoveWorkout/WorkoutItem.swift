@@ -20,7 +20,7 @@ struct WorkoutItem : Codable, Identifiable, Hashable {
     var exercise : String = ""
     var done : Bool = false
     var date: Date
-    var workoutCount: Int
+    var workoutCount = 1
 
 }
 
