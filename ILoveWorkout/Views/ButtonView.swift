@@ -45,7 +45,7 @@ struct ButtonView: View {
                                                                                                     "exercise" : "",
                                                                                                     "done": false,
                                                                                                     "date": Date(),
-                                                                                                    "workoutCount": Int()])
+                                                                                                    "workoutCount": 1])
             }
 
         }
