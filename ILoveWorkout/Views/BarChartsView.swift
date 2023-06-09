@@ -11,21 +11,18 @@ import Firebase
 import FirebaseAuth
 import Foundation
 
-
+// Ernesto: visar en Diagram på träning och resulat
 struct BarChartsView: View {
-   
-    
     let db = Firestore.firestore()
     let currentUser = Auth.auth().currentUser
     
-    @State var workoutCounter = [WorkoutItem]()
+    @StateObject private var viewModel = WorkoutViewModel()
 
     var body: some View {
-        
         VStack(alignment: .leading, spacing: 4) {
             Text("Exercises Counter")
             
-            Text("Total: \(workoutCounter.reduce(0, { $0 + $1.workoutCount }))")
+            Text("Total: \(viewModel.workoutItems.reduce(0, { $0 + $1.workoutCount }))")
                 .fontWeight(.semibold)
                 .font(.footnote)
                 .foregroundColor(.secondary)
@@ -36,10 +33,10 @@ struct BarChartsView: View {
                     .foregroundStyle(Color.black)
                     .lineStyle(StrokeStyle(lineWidth: 1, dash: [5]))
                 
-                ForEach(workoutCounter) { workoutcounter in
+                ForEach(viewModel.workoutItems) { workoutItem in
                     BarMark(
-                        x: .value("Month", workoutcounter.date, unit: .month),
-                        y: .value("WorkoutCount", workoutcounter.workoutCount)
+                        x: .value("Month", workoutItem.date, unit: .month),
+                        y: .value("WorkoutCount", workoutItem.workoutCount)
                     )
                     .foregroundStyle(Color.red.gradient)
                     .cornerRadius(10)
@@ -47,18 +44,16 @@ struct BarChartsView: View {
             }
             .frame(height: 180)
             .chartYScale()
-            //Lägga till Y-Axis markers???
+            
             .chartXAxis {
-                AxisMarks(values: workoutCounter.map {$0.date}) { date in
-                    AxisValueLabel(format:
-                            .dateTime.month(.narrow),
-                                   centered: true)
+                AxisMarks(values: viewModel.workoutItems.map { $0.date }) { date in
+                    AxisValueLabel(format: .dateTime.month(.narrow), centered: true)
                 }
             }
             .chartYAxis {
                 AxisMarks(position: .leading)
-                
             }
+            
             HStack {
                 Image(systemName: "line.diagonal")
                     .rotationEffect(Angle(degrees: 45))
@@ -69,43 +64,16 @@ struct BarChartsView: View {
             }
             .font(.caption2)
             .padding(.leading, 4)
-            
-            
-        }
-        .onAppear() {
-            listenToFirestore()
         }
         .padding()
     }
-    
-    func listenToFirestore() {
-        if let currentUser {
-            db.collection("users").document(currentUser.uid).collection("exercises").addSnapshotListener { snapshot, err in
-                guard let snapshot = snapshot else {return}
-                
-                if let err = err {
-                    print("Error getting document \(err)")
-                } else {
-                    workoutCounter.removeAll()
-                    for document in snapshot.documents {
-                        
-                        let result = Result {
-                            try document.data(as: WorkoutItem.self)
-                        }
-                        switch result  {
-                        case .success(let workoutcount)  :
-                            workoutCounter.append(workoutcount)
-                        case .failure(let error) :
-                            print("Error decoding workoutitem: \(error)")
-                        }
-                    }
-                }
-            }
-        }
-    }
+}
+
+//     Ernesto: ska flyttas ut till WorkoutViewModel
+
     
 
-}
+
 //struct BarChartsView_Previews: PreviewProvider {
 //    static var previews: some View {
 //        BarChartsView(workoutitems: <#[WorkoutItem]#>)
@@ -118,4 +86,3 @@ extension Date {
         return Calendar.current.date(from: components)!
     }
 }
-

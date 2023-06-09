@@ -1,10 +1,3 @@
-//
-//  ContentView.swift
-//  ILoveWorkout
-//
-//  Created by Jonas Backas on 2023-01-23.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseAuth
@@ -17,14 +10,14 @@ struct FirstScreenView: View {
         NavigationView {
             GeometryReader { proxy in
                 VStack {
-                    Spacer().frame(height:
+                    Spacer().frame(height:// Skapar ett tomt utrymme överst i vyen
                                     proxy.size.height * 0.40)
                     Text("Workout Diary")
-                        .font(.system(size: 59, weight: .medium))
+                        .font(.system(size: 59, weight: .medium)) // Rubriktext med anpassad teckenstorlek och vikt
                         .foregroundColor(.white)
                     Spacer()
-                    NavigationLink (destination:
-                                   ContentView(), isActive:
+                    NavigationLink (destination: // En navigeringslänk till ContentView
+                                   ContentView(), isActive:// Uppdaterar isActive-variabeln för att aktivera navigeringslänken
                                         $isActive) {
                         Button(action: {
                             isActive = true
@@ -39,12 +32,13 @@ struct FirstScreenView: View {
                             }.padding()
                         }
                     }
+                    // Anpassar vyns ramstorlek till att fylla hela skärmen
                 }.frame(
                     maxWidth: .infinity,
                     maxHeight: .infinity
                 )
                 .background(
-                    Image("LoveWorkout")
+                    Image("LoveWorkout")// Bakgrundsbild med namnet "LoveWorkout"
                         .resizable()
                         .aspectRatio(
                             contentMode: .fill

@@ -1,10 +1,3 @@
-//
-//  loginView.swift
-//  ILoveWorkout
-//
-//  Created by Jonas Backas on 2023-02-15.
-//
-
 import SwiftUI
 import FirebaseAuth
 
@@ -13,7 +6,7 @@ struct loginView: View {
     
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
-    
+    // State-variabler för att lagra e-post och lösenord
     @State private var email: String = ""
     @State private var password: String = ""
     
@@ -34,10 +27,12 @@ struct loginView: View {
                 .padding(.top)
                 
                 Spacer()
-                
+                // Inmatningsfält för e-post
                 HStack {
                     Image(systemName: "mail")
                     TextField("Email", text:$email)
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none) // Ernesto: tar bort auto korregerin av stor bokstav
                     
                     Spacer()
                     
@@ -58,7 +53,7 @@ struct loginView: View {
                 )
                 .padding()
                 
-                
+                // Inmatningsfält för lösenord
                 HStack {
                     Image(systemName: "lock")
                     SecureField("Password", text:$password)
@@ -132,4 +127,6 @@ struct loginView: View {
         }.navigationBarBackButtonHidden(true)
     }
 }
+
+
 

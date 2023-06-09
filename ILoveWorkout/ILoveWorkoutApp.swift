@@ -13,7 +13,7 @@ import FirebaseCore
 
 @main
 struct ILoveWorkoutApp: App {
-    
+    // Konfigurera Firebase vid app-start
     init() {
         FirebaseApp.configure()
     }

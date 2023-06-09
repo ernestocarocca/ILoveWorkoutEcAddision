@@ -1,20 +1,15 @@
-//
-//  ProfileView.swift
-//  ILoveWorkout
-//
-//  Created by Jonas Backas on 2023-01-23.
-//
-
 import SwiftUI
 import Firebase
 import FirebaseAuth
 import Charts
 
 struct ProfileView: View {
-    @AppStorage("uid") var userID: String = ""
+    // Användar-ID som lagras i AppStorage
+    @AppStorage("uid") var userID: String = "" //Ernesto ändrat
     @State var logoutOptions = false
     @State private var userIsLoggedIn = false
-    @State private var currentIndex = 0
+    //Ernesto ändrat namn från CurrentImageIndex
+    @State private var currentImageIndex = 0 // Index för att hålla reda på aktuell bild i bildspelet
     
     
     private var numberOfImages = 6
@@ -25,10 +20,10 @@ struct ProfileView: View {
         VStack {
             TopNavigationBarView
             Spacer()
-            BarChartsView()
+            BarChartsView() // Visa stapeldiagram
             
             GeometryReader { proxy in
-                TabView(selection: $currentIndex) {
+                TabView(selection: $currentImageIndex) {
                     ForEach(0..<numberOfImages) { num in
                         Image("\(num)")
                             .resizable()
@@ -41,13 +36,14 @@ struct ProfileView: View {
                     .padding()
                     .frame(width: proxy.size.width, height:
                             proxy.size.height / 1)
+               // Byt till nästa bild med hjälp av timer
                     .onReceive(timer, perform: { _ in
                         next()
                         
                         })
                 
             }
-            controls
+            controls // Visa kontroller för att navigera mellan bilderna
             Spacer()
             Spacer()
             
@@ -57,15 +53,15 @@ struct ProfileView: View {
     
     func previous() {
         withAnimation {
-            currentIndex = currentIndex > 0 ? currentIndex
+            currentImageIndex = currentImageIndex > 0 ? currentImageIndex
             - 1 : numberOfImages  - 1
         }
     }
 
     func next() {
         withAnimation {
-            currentIndex = currentIndex <
-                numberOfImages ? currentIndex + 1 : 0
+            currentImageIndex = currentImageIndex <
+                numberOfImages ? currentImageIndex + 1 : 0
             }
         }
     
@@ -138,7 +134,7 @@ struct ProfileView: View {
                         print("Error signing out: #€", signOutError)
                     }
                     
-                    //try? Auth.auth().signOut()
+                 
                 }),
                 .cancel()
              ])
@@ -154,3 +150,4 @@ struct ProfileView_Previews: PreviewProvider {
         ProfileView()
     }
 }
+

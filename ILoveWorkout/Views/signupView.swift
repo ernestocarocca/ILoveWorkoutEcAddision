@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseAuth
 
 struct signupView: View {
+    // Binding för att hålla reda på vilken vy som för närvarande visas
     @Binding var currentShowingView: String
     @AppStorage("uid") var userID: String = ""
     
@@ -37,7 +38,8 @@ struct signupView: View {
                 HStack {
                     Image(systemName: "mail")
                     TextField("Email", text:$email)
-                    
+                        .disableAutocorrection(true)
+                        .autocapitalization(.none) // Ernesto: tar bort auto korregerin av stor bokstav
                     Spacer()
                     
                     if(email.count != 0) {
@@ -132,5 +134,6 @@ struct signupView: View {
         }
     }
 }
+
 
 

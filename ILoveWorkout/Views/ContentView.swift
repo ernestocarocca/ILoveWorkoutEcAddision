@@ -10,12 +10,15 @@ import Firebase
 import FirebaseAuth
 
 struct ContentView: View {
-    @AppStorage("uid") var userID: String = ""
+   
+
+    @AppStorage("uid") var userID: String = "" // Användar-ID som lagras i AppStorage
+
 
     var body: some View {
         
         if userID == "" {
-            AuthView()
+            AuthView() // Visa inloggningsvyn om användar-ID är tomt
         } else {
             TabView {
                 WorkoutView()
@@ -33,7 +36,7 @@ struct ContentView: View {
                         Image(systemName: "gearshape.fill")
                         Text("Profile")
                     }
-            }.navigationBarBackButtonHidden(true)
+            }.navigationBarBackButtonHidden(true)// Dölj tillbaka-knappen i navigeringsfältet
             
         }
     }
