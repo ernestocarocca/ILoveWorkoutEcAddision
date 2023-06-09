@@ -17,12 +17,15 @@ struct BarChartsView: View {
     let currentUser = Auth.auth().currentUser
     
     @StateObject private var viewModel = WorkoutViewModel()
+    var workoutCounter: [WorkoutItem] {
+        viewModel.workoutItems
+    }
 
     var body: some View {
         VStack(alignment: .leading, spacing: 4) {
             Text("Exercises Counter")
             
-            Text("Total: \(viewModel.workoutItems.reduce(0, { $0 + $1.workoutCount }))")
+            Text("Total: \(workoutCounter.reduce(0, { $0 + $1.workoutCount }))")
                 .fontWeight(.semibold)
                 .font(.footnote)
                 .foregroundColor(.secondary)
@@ -33,7 +36,7 @@ struct BarChartsView: View {
                     .foregroundStyle(Color.black)
                     .lineStyle(StrokeStyle(lineWidth: 1, dash: [5]))
                 
-                ForEach(viewModel.workoutItems) { workoutItem in
+                ForEach(workoutCounter) { workoutItem in
                     BarMark(
                         x: .value("Month", workoutItem.date, unit: .month),
                         y: .value("WorkoutCount", workoutItem.workoutCount)
@@ -46,7 +49,7 @@ struct BarChartsView: View {
             .chartYScale()
             
             .chartXAxis {
-                AxisMarks(values: viewModel.workoutItems.map { $0.date }) { date in
+                AxisMarks(values: workoutCounter.map { $0.date }) { date in
                     AxisValueLabel(format: .dateTime.month(.narrow), centered: true)
                 }
             }
@@ -69,16 +72,7 @@ struct BarChartsView: View {
     }
 }
 
-//     Ernesto: ska flyttas ut till WorkoutViewModel
 
-    
-
-
-//struct BarChartsView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        BarChartsView(workoutitems: <#[WorkoutItem]#>)
-//    }
-//}
 
 extension Date {
     static func from(month: Int) -> Date {
